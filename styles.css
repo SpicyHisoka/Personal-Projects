@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #414141;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'VT323', monospace;
+}
+
+.scores {
+    display: flex;
+    justify-content: space-between;
+}
+
+#score,
+#highScore {
+    font-size: 40px;
+    font-weight: bolder;
+    margin: 10px 0;
+}
+
+#score {
+    color: #abb78a;
+}
+
+#highScore {
+    color: #d8ddca;
+    display: none;
+}
+
+.game-border-1 {
+    width: 506px;
+    height: 506px;
+    border: #595f43 solid 10px;
+    border-radius: 30px;
+    box-shadow: inset 0 0 0 10px #595f43; /* per evitare il gap tra i vari div */
+}
+
+.game-border-2 {
+    width: 486px;
+    height: 486px;
+    border: #abb78a solid 8px;
+    border-radius: 26px;
+    box-shadow: inset 0 0 0 10px #abb78a; /* per evitare il gap tra i vari div */
+}
+
+.game-border-3 {
+    width: 470px;
+    height: 470px;
+    background-color: #c4cfa3; /* !! background */
+    border: #8b966c solid 30px;
+    border-radius: 20px;
+    box-shadow: inset 0 0 0 5px #8b966c; /* per evitare il gap tra i vari div */
+}
+
+#game-board {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 100px;
+    display: grid;
+    grid-template-columns: repeat(20, 20px);
+    grid-template-rows: repeat(20, 20px);
+    margin: 5px; /* scopo grafico */
+}
+
+/* Snake and food */
+.snake {
+    background-color: #2c5424aa;
+    border: #595f43 5px dotted;
+    border-radius: 2px;
+}
+
+.food {
+    background-color: #e00000a8;
+    border: #870000 5px solid;
+    border-radius: 2px;
+}
+
+/* Pause game */
+#pause-message {
+    z-index: 999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    font-weight: 900;
+    color: #595f43;
+    background-color: #abb78a;
+    padding: 0 35px;
+    display: none;
+}
+
+/* Level selection */
+#level-selection {
+    display: none;
+}
+
+#declaration-text,
+#level-list,
+#select-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#declaration-text {
+    top: 40%;
+    font-size: 50px;
+    text-transform: uppercase;
+    margin: 0;
+
+}
+
+#level-list {
+    list-style: none;
+    padding: 0;
+    width: 340px;
+    margin-top: 30px;
+}
+
+#level-list li {
+    background-color: #8b966c;
+    text-align: center;
+    color: #414141;
+    padding: 15px 0;
+    margin: 10px 0;
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.8s ease; /* Smooth transition for selection */
+}
+
+/* Selected level item */
+#level-list li.selected {
+    background-color: #595f43;
+    color: #c4cfa3;
+    box-shadow: 0 0 15px #abb78a;
+    transform: scale(1.1);  /* Slight zoom effect for visual emphasis */
+}
+
+#select-text {
+    top: 63%;
+    color: #333;
+    width: 300px;
+    text-align: center;
+    text-transform: capitalize;
+    margin: 0;
+    font-size: 26px;
+}
+
+/* Start game section */
+#instruction-text {
+    position: absolute;
+    top: 60%;
+    color: #333;
+    width: 333px;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 30px;
+    margin: 0;
+    font-size: 26px;
+}
+
+#logo {
+    position: absolute;
+    width: 333px;
+}
